@@ -1,0 +1,28 @@
+{% extends "default.html" %}
+{% block title %}
+    User List for {{ current_user }}
+{% endblock title %}
+{% block content %}
+    <h2>User List for {{ current_user }}</h2>
+    <p>
+        {% for user in users %}
+            {{ user }}
+        {% endfor %}
+    </p>
+    <h2>List of available rooms for {{ current_user }}</h2>
+    {% for room in rooms %}
+        <p>
+            Room <a href="{% url 'room' room %}">'{{ room }}'</a> with users:
+            {% for room_user in room.users.all %}
+                {% if room_user != current_user %}
+                    {{ room_user }}
+                {% endif %}
+            {% endfor %}
+            {% if current_user in room.users.all or request.user.is_staff %}
+                <a href="{% url 'room_update' room.id %}">Update</a>
+                <a href="{% url 'room_delete' room.id %}">Delete</a>
+            {% endif %}
+        </p>
+    {% endfor %}
+    <p><a href="{% url 'room_create' %}">Create New Room</a></p>
+{% endblock content %}

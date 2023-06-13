@@ -1,0 +1,12 @@
+{% extends "default.html" %}
+{% block title %}
+  Permission denied
+{% endblock title %}
+{% block content %}
+    <h1>You definitely don't have access to this page...</h1>
+    {% if request.user.is_anonymous %}
+        <p>Use the panel at the top of the screen to log in or sign up</p>
+    {% else %}
+        <p>You are already logged in, but don't have access to request page, so you may need to contact the site administrator.</p>
+    {% endif %}
+{% endblock content %}

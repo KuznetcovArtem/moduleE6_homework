@@ -1,0 +1,12 @@
+{% extends "default.html" %}
+{% block title %}
+  Edit Profile {{ user.username }}
+{% endblock title %}
+{% block content %}
+    <form action='' method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ user_form.as_p }}
+        {{ chat_user_form.as_p }}
+        <input type="submit" value="Save"/>
+    </form>
+{% endblock content %}

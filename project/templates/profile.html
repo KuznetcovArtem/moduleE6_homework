@@ -1,0 +1,11 @@
+{% extends "default.html" %}
+{% block title %}
+  Profile {{ user }}
+{% endblock title %}
+{% block content %}
+    <h2 align="center"> Профиль пользователя {{ user }}</h2>
+    <img alt='аватар' src="{{ user.avatar.url }}">
+    <br>
+    <a href="{% url 'profile_edit' %}">Редактировать профиль</a>
+    <hr>
+{% endblock content %}
