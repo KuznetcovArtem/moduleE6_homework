@@ -33,8 +33,8 @@ python manage.py runserver
 
 ## Зарегистрированные пользователи в базе (логин/пароль)
 Superuser - admin/admin <br>
-1. no/rfrjqnjgfhjkm 
-2. one/rfrjqnjgfhjkm
+1. no@no.com/rfrjqnjgfhjkm 
+2. one@one.com/rfrjqnjgfhjkm
 3. noone/rfrjqnjgfhjkm
 
 ### Порядок работы с сайтом через браузер:
